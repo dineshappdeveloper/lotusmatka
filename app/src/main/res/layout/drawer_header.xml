@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:paddingVertical="10dp"
+    android:background="#263FC3"
+    android:paddingHorizontal="25dp"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/person"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/notiSwitchBtn"
+        android:src="@drawable/profile_image"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/personName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rocy Boy"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginStart="10dp"
+        app:layout_constraintTop_toTopOf="@id/person"
+        app:layout_constraintStart_toEndOf="@id/person"
+        app:layout_constraintBottom_toTopOf="@id/mobileNumber"/>
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/mobileNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:text="9876543210"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/personName"
+        app:layout_constraintStart_toStartOf="@id/personName"
+        app:layout_constraintBottom_toBottomOf="@id/person"/>
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/notiSwitchBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:paddingStart="8dp"
+        android:textStyle="bold"
+        android:paddingEnd="5dp"
+        android:visibility="gone"
+        android:checked="true"
+        android:background="@drawable/dark_border"
+        android:text="App Notification"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/person"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

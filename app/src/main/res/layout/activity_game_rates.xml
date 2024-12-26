@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#263FC3"
+    android:orientation="vertical"
+    tools:context=".GameRateActivity.GameRatesActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <include layout="@layout/custom_appbar8"
+            android:id="@+id/appbarLayout"/>
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/dataConText"
+            android:text="@string/you_are_not_connected_to_internet"
+            android:textColor="@color/white"
+            android:background="@color/warningRed"
+            android:padding="5dp"
+            android:visibility="gone"
+            android:elevation="1dp"/>
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginVertical="20dp"
+            android:src="@drawable/ic_app_logo_trans"
+            android:layout_gravity="center"/>
+
+        <LinearLayout
+            android:id="@+id/gameRateLyt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:elevation="1dp">
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginTop="10dp"
+                app:cardElevation="0dp"
+                android:layout_weight="1"
+                app:cardBackgroundColor="@color/orange_color"
+                app:cardCornerRadius="40dp">
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/singleDigitValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Single Digit-10/90"
+                    android:lineSpacingExtra="10dp"
+                    android:textStyle="bold"
+                    android:layout_marginVertical="10dp"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center"
+                    android:textSize="16sp" />
+
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                app:cardElevation="0dp"
+                android:layout_weight="1"
+                app:cardBackgroundColor="@color/orange_color"
+                app:cardCornerRadius="40dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/jodiDigit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Withdraw"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:lineSpacingExtra="10dp"
+                    android:layout_marginVertical="10dp"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center"
+                    android:textSize="16sp" />
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginVertical="10dp"
+            android:elevation="1dp">
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginTop="10dp"
+                app:cardElevation="0dp"
+                android:layout_weight="1"
+                app:cardBackgroundColor="@color/orange_color"
+                app:cardCornerRadius="40dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/singlePanaValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Transfer"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:lineSpacingExtra="10dp"
+                    android:layout_marginVertical="10dp"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center"
+                    android:textSize="16sp" />
+
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                app:cardElevation="0dp"
+                android:layout_weight="1"
+                app:cardBackgroundColor="@color/orange_color"
+                app:cardCornerRadius="40dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/doubleDigitValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bank Details"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:lineSpacingExtra="10dp"
+                    android:layout_marginVertical="10dp"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center"
+                    android:textSize="16sp" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:elevation="1dp">
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginTop="10dp"
+                app:cardElevation="0dp"
+                android:layout_weight="1"
+                app:cardBackgroundColor="@color/orange_color"
+                app:cardCornerRadius="40dp">
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tripleDigitValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PhonePe"
+                    android:textStyle="bold"
+                    android:layout_marginVertical="10dp"
+                    android:gravity="center"
+                    android:lineSpacingExtra="10dp"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center"
+                    android:textSize="16sp" />
+
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                app:cardElevation="0dp"
+                android:layout_weight="1"
+                app:cardBackgroundColor="@color/orange_color"
+                app:cardCornerRadius="40dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/halfSangamValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PayTm"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:lineSpacingExtra="10dp"
+                    android:layout_marginVertical="10dp"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center"
+                    android:textSize="16sp" />
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="20dp"
+            app:cardElevation="0dp"
+            android:layout_weight="1"
+            app:cardBackgroundColor="@color/orange_color"
+            app:cardCornerRadius="40dp">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/fullSangamValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PayTm"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:layout_marginVertical="10dp"
+                android:textColor="@color/black"
+                android:lineSpacingExtra="10dp"
+                android:layout_gravity="center"
+                android:textSize="16sp" />
+        </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:id="@+id/howToPlayLyt">
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/howToPlayText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:layout_marginHorizontal="50dp"
+                android:layout_marginVertical="20dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="15sp"
+                android:onClick="WatchItOnYoutube"
+                android:layout_marginTop="10dp"
+                android:padding="2dp"
+                android:backgroundTint="@color/white"
+                android:background="@drawable/text_field_background">
+                <FrameLayout
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:backgroundTint="@color/orange_color"
+                    android:background="@drawable/baseline_circle_24">
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:src="@drawable/baseline_play_circle_filled_24"
+                        android:tint="@color/toolbarColor"/>
+                </FrameLayout>
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="How To Play"
+                    android:textColor="@color/white"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="18sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:id="@+id/progressBar"
+        android:visibility="gone"/>
+
+</RelativeLayout>

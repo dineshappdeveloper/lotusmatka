@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#263FC3"
+    tools:context=".MainGameChart.MainGameChartActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <include layout="@layout/custom_appbar8"/>
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/dataConText"
+            android:text="@string/you_are_not_connected_to_internet"
+            android:textColor="@color/white"
+            android:background="@color/warningRed"
+            android:padding="5dp"
+            android:visibility="gone"
+            android:elevation="1dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/chartRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/main_game_chart_item"
+            tools:itemCount="21"
+            android:layout_marginTop="20dp"
+            android:layout_marginHorizontal="5dp"
+            android:nestedScrollingEnabled="false"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="7"/>
+
+    </LinearLayout>
+    <include layout="@layout/custom_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"/>
+
+</RelativeLayout>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/mybg"
+    tools:context=".OtpActivity.OTPActivity">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/dataConText"
+        android:text="@string/you_are_not_connected_to_internet"
+        android:textColor="@color/white"
+        android:background="@color/warningRed"
+        android:padding="5dp"
+        android:visibility="gone"
+        android:elevation="1dp"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="top"
+            android:gravity="top|center_horizontal"
+            android:orientation="vertical"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="30dp">
+            <include layout="@layout/top_design"
+                android:id="@+id/topDesign"/>
+
+            <in.aabhasjindal.otptextview.OtpTextView
+                android:id="@+id/in_pc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                app:bar_enabled="true"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="80dp"
+                android:layout_gravity="center_horizontal"
+                app:bar_active_color="@color/blue_color"
+                app:bar_inactive_color="@color/white"
+                app:length="4"
+                app:box_margin_left="9dp"
+                app:box_margin_right="9dp"
+                app:otp_text_size="18sp"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/resendOtp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:layout_marginHorizontal="30dp"
+                android:layout_gravity="center_horizontal"
+                android:gravity="end|center_vertical"
+                android:padding="5dp"
+                android:text="Don't receive code? Resend OTP"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textAllCaps="false"
+                android:onClick="resendOtp"
+                android:layout_marginBottom="50dp"
+                app:cornerRadius="20dp"/>
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#071BA4"
+                app:cornerRadius="20dp"
+                app:strokeColor="@color/white"
+                app:strokeWidth="2dp"
+                android:onClick="verifyOtp"
+                android:text="Verify"
+
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/poppins_extra_bold"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:paddingHorizontal="50dp"
+                android:textColor="@color/logInInputTextColor"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Need Help?"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"/>
+
+            <include layout="@layout/admin_button"
+                android:id="@+id/adminButton"/>
+
+        </LinearLayout>
+
+
+
+    </androidx.core.widget.NestedScrollView>
+
+    <include layout="@layout/custom_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_centerInParent="true"/>
+</RelativeLayout>

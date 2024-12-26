@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.old_dummy.cc">
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:forceDarkAllowed="false"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:screenOrientation="portrait"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.SattaMatka"
+        android:usesCleartextTraffic="true"
+        tools:ignore="GoogleAppIndexingWarning"
+        tools:node="merge"
+        tools:targetApi="31">
+        <activity
+            android:name="com.old_dummy.cc.NewPasswordActivity.NewPasswordActivity"
+            android:windowSoftInputMode="stateVisible|adjustResize"
+            android:exported="false" />
+        <activity
+            android:name="com.old_dummy.cc.OtpActivity.OTPActivity"
+            android:windowSoftInputMode="stateVisible|adjustResize"
+            android:exported="false" />
+        <activity
+            android:name="com.old_dummy.cc.StarlineGameActivity.StarLineGameActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.old_dummy.cc.GalidesawarActivity.GalidesawarActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.old_dummy.cc.GameProceedActivity.GameProceedActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.old_dummy.cc.GameActivity.GameActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.old_dummy.cc.GalidesawarGameActivity.GalidesawarGameActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.old_dummy.cc.GalidesawarProceedActivity.GalidesawarBidPlacedActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.old_dummy.cc.StarLineActivity.StarLineActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.old_dummy.cc.ContactUsActivity.ContactUsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.old_dummy.cc.GameRateActivity.GameRatesActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.old_dummy.cc.HistoryActivity.WinHistoryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.old_dummy.cc.ProfileActivity.ProfileActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.old_dummy.cc.ChartActivity.ChartActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.old_dummy.cc.UPIDetailsActivity.UPIDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.old_dummy.cc.StarlineChart.StarlineChartActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.old_dummy.cc.BankDetailsActivity.BankDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.old_dummy.cc.BankMethodActivity.BankMethodActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.old_dummy.cc.MainGameChart.MainGameChartActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.old_dummy.cc.WithdrawActivity.WithdrawActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustPan" />
+        <activity
+            android:name="com.old_dummy.cc.TopUpActivity.TopUpActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.old_dummy.cc.WalletActivity.WalletActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.old_dummy.cc.SecurityPinActivity.SecurityPinActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.old_dummy.cc.ChangePasswordActivity.ChangePasswordActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.old_dummy.cc.ForgotPasswordActivity.ForgotPasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.old_dummy.cc.SignUpActivity.SignUpActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name="com.old_dummy.cc.LoginActivity.LoginActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name="com.old_dummy.cc.SplashActivity.SplashActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.old_dummy.cc.MainActivity.MainActivity"
+            android:forceDarkAllowed="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.old_dummy.cc.TransferPointsActivity.TransferPointsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.old_dummy.cc.StarLineBidPlacedActivity.StarLineBidPlacedActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.old_dummy.cc.GalidesawarChart.GalidesawarChartActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.old_dummy.cc.AddFundMethodsActivity.AddFundMethodsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.old_dummy.cc.FundsActivity.FundsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.old_dummy.cc.MyHistoryActivity.MyHistoryActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name="com.old_dummy.cc.NoticeActivity.NoticeActivity" />
+        <activity android:name="com.old_dummy.cc.ServerActivity.ServerActivity" />
+
+
+        <service
+            android:name="com.old_dummy.cc.Extras.YourService"
+            android:enabled="true"
+            android:exported="false" />
+    </application>
+
+</manifest>

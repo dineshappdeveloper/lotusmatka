@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".WithdrawActivity.WithdrawActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include
+            layout="@layout/custom_appbar14"
+            android:id="@+id/appbarLayout"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/dataConText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/warningRed"
+            android:elevation="1dp"
+            android:padding="5dp"
+            android:text="@string/you_are_not_connected_to_internet"
+            android:textColor="@color/white"
+            android:visibility="gone" />
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical">
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/openTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#071BA4"
+                        android:paddingHorizontal="15dp"
+                        android:paddingTop="5dp"
+                        android:textSize="15sp"
+                        android:text="Withdraw Open Time: 07:00 AM"
+                        android:textColor="@color/white"/>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/closeTime"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#071BA4"
+                        android:paddingHorizontal="15dp"
+                        android:paddingBottom="5dp"
+                        android:textSize="15sp"
+                        android:text="Withdraw Close Time: 09:00 AM"
+                        android:textColor="@color/white" />
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10dp">
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:id="@+id/pointIcon"
+                            android:src="@drawable/wallet"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/walletAmount"/>
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintTop_toTopOf="@id/pointIcon"
+                            app:layout_constraintBottom_toBottomOf="@id/pointIcon"
+                            app:layout_constraintStart_toEndOf="@id/pointIcon"
+                            app:layout_constraintBottom_toTopOf="@id/text1"
+                            android:text="00"
+                            android:textStyle="bold"
+                            android:textSize="18sp"
+                            android:textColor="@color/black"
+                            android:id="@+id/walletAmount"
+                            android:layout_marginStart="15dp"/>
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintTop_toBottomOf="@id/walletAmount"
+                            app:layout_constraintBottom_toBottomOf="@id/pointIcon"
+                            app:layout_constraintStart_toEndOf="@id/pointIcon"
+                            android:text="Available Balance"
+                            android:textSize="18sp"
+                            android:textColor="@color/black"
+                            android:id="@+id/text1"
+                            android:layout_marginStart="15dp"/>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="10dp"
+                        android:layout_marginHorizontal="30dp"
+                        app:cardCornerRadius="8dp"
+                        android:elevation="9dp"
+                        app:cardBackgroundColor="@color/orange_color"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:background="#071BA4"
+                            android:paddingHorizontal="5dp"
+                            android:paddingVertical="8dp">
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Withdraw Notice"
+                                android:textColor="@color/white"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:layout_gravity="center"/>
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/mtv_withdraw_notice"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/black"
+                                android:gravity="center"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginHorizontal="20dp"
+                        android:elevation="1dp">
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="5dp"
+                            app:cardElevation="0dp"
+                            android:layout_weight="1"
+                            android:foreground="?selectableItemBackground"
+                            android:onClick="googlePay"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="40dp">
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Google Pay"
+                                android:textStyle="bold"
+                                android:layout_marginVertical="10dp"
+                                android:gravity="center"
+                                android:textColor="@color/black"
+                                android:layout_gravity="center"
+                                android:textSize="16sp" />
+
+                        </com.google.android.material.card.MaterialCardView>
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginStart="5dp"
+                            app:cardElevation="0dp"
+                            android:layout_weight="1"
+                            android:foreground="?selectableItemBackground"
+                            android:onClick="phonePe"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="40dp">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="PhonePe"
+                                android:textStyle="bold"
+                                android:layout_marginVertical="10dp"
+                                android:textColor="@color/black"
+                                android:layout_gravity="center"
+                                android:textSize="16sp" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginVertical="10dp"
+                        android:elevation="1dp">
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="5dp"
+                            app:cardElevation="0dp"
+                            android:layout_weight="1"
+                            android:onClick="paytm"
+                            android:background="?selectableItemBackground"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="40dp">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/addFunds"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="PayTm"
+                                android:textStyle="bold"
+                                android:layout_marginVertical="10dp"
+                                android:textColor="@color/black"
+                                android:layout_gravity="center"
+                                android:textSize="16sp" />
+
+                        </com.google.android.material.card.MaterialCardView>
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginStart="5dp"
+                            app:cardElevation="0dp"
+                            android:layout_weight="1"
+                            android:onClick="Bank"
+                            android:background="?selectableItemBackground"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="40dp">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Bank Details"
+                                android:textStyle="bold"
+                                android:layout_marginVertical="10dp"
+                                android:textColor="@color/black"
+                                android:layout_gravity="center"
+                                android:textSize="16sp" />
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="30dp"
+                        android:orientation="horizontal"
+                        android:background="@drawable/border2">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/inputWithdrawPoints"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/transparent"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/black"
+                            android:hint="Enter Points"
+                            android:layout_marginHorizontal="20dp"
+                            android:layout_marginVertical="15dp"
+                            android:inputType="number"
+                            android:textSize="16sp"
+                            android:maxLength="9"
+                            android:singleLine="true"
+                            android:layout_gravity="center_vertical"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="30dp"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp"
+                        android:onClick="selectPayMethod"
+                        android:background="@drawable/border2">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/selectPaymentMethod"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:background="@color/transparent"
+                            android:textColor="@color/black"
+                            android:layout_weight="1"
+                            android:hint="Select Payment Method"
+                            android:layout_marginHorizontal="20dp"
+                            android:layout_marginVertical="15dp"
+                            android:textSize="16sp"
+                            android:singleLine="true"
+                            android:drawableEnd="@drawable/baseline_arrow_drop_down_24"
+                            android:layout_gravity="center_vertical"/>
+
+                    </LinearLayout>
+                    <!--<RelativeLayout
+                        android:id="@+id/cardGooglePay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="30dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/googleImage"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginBottom="5dp"
+                            android:src="@drawable/googlepay" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toStartOf="@+id/googleImage"
+                            android:layout_toEndOf="@id/radioGooglePay"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/title1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Google Pay"
+                                android:textColor="@color/text_color_state"
+                                android:textSize="16sp" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/googlePayNumber"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="+9109876654321"
+                                android:textColor="@color/text_color_state"/>
+
+                        </LinearLayout>
+
+                        <RadioButton
+                            android:id="@+id/radioGooglePay"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:enabled="false"
+                            android:onClick="googlePayClick"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"/>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/cardPhonepe"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="30dp"
+                        android:layout_marginVertical="10dp"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/phonepeImage"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginBottom="5dp"
+                            android:src="@drawable/phonepe" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toStartOf="@+id/phonepeImage"
+                            android:layout_toEndOf="@id/radioPhonepe"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/title2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="PhonePe"
+                                android:textColor="@color/text_color_state"
+                                android:textSize="16sp" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/phonepeNumber"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="+9109876654321"
+                                android:textColor="@color/text_color_state"/>
+
+                        </LinearLayout>
+
+                        <RadioButton
+                            android:id="@+id/radioPhonepe"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:enabled="false"
+                            android:onClick="phonePeClick"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"/>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/cardPaytm"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="30dp"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/imagePaytm"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginBottom="5dp"
+                            android:src="@drawable/paytm_round" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toStartOf="@+id/imagePaytm"
+                            android:layout_toEndOf="@id/radioPaytm"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/title3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="PayTm"
+                                android:textColor="@color/text_color_state"
+                                android:textSize="16sp" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/paytmNumber"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="+9109876654321"
+                                android:textColor="@color/text_color_state"/>
+
+                        </LinearLayout>
+
+                        <RadioButton
+                            android:id="@+id/radioPaytm"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:enabled="false"
+                            android:onClick="paytmClick"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"/>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/cardBank"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="30dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/bankImage"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginBottom="5dp"
+                            android:src="@drawable/bank_update" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toStartOf="@+id/bankImage"
+                            android:layout_toEndOf="@id/bankRadio"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/title4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Bank Details"
+                                android:textColor="@color/text_color_state"
+                                android:textSize="16sp" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/bankNumber"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="+9109876654321"
+                                android:textColor="@color/text_color_state"/>
+
+                        </LinearLayout>
+
+                        <RadioButton
+                            android:id="@+id/bankRadio"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:enabled="false"
+                            android:onClick="bankClick"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"/>
+                    </RelativeLayout>-->
+                    <com.google.android.material.button.MaterialButton
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="45dp"
+                        android:layout_marginTop="20dp"
+                        android:backgroundTint="#071BA4"
+                        android:onClick="submitWithdrawPoints"
+                        android:text="Submit"
+                        app:cornerRadius="20dp"
+                        android:paddingVertical="12dp"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold"/>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/emptyIcon"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_centerInParent="true"
+                            android:layout_marginVertical="100dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/ic_win_history_icon_2_01"
+                            android:visibility="gone" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recyclerView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:nestedScrollingEnabled="false"
+                            tools:listitem="@layout/recycler_view_wallet"
+                            />
+                    </RelativeLayout>
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar"
+        android:indeterminateTint="@color/orange_color"
+        android:layout_centerInParent="true"
+        android:visibility="gone"/>
+</RelativeLayout>

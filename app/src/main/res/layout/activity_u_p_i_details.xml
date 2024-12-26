@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".UPIDetailsActivity.UPIDetailsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <include layout="@layout/custom_appbar12"
+            android:id="@+id/appbarLayout"/>
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/dataConText"
+            android:text="@string/you_are_not_connected_to_internet"
+            android:textColor="@color/white"
+            android:background="@color/warningRed"
+            android:padding="5dp"
+            android:visibility="gone"
+            android:elevation="1dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/upiIcon"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginTop="50dp"
+                android:src="@drawable/paytm"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:baselineAligned="false"
+                android:orientation="vertical"
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="15dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/titleText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mobile_number"
+                    android:layout_marginStart="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@drawable/border2">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inputUPI"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/transparent"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginVertical="15dp"
+                        android:hint="Enter Mobile Number"
+                        android:inputType="phone"
+                        android:textSize="16sp"
+                        android:maxLength="10"
+                        android:singleLine="true"
+                        android:layout_gravity="center_vertical"/>
+                </LinearLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/submitButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginTop="40dp"
+                    android:backgroundTint="#071BA4"
+                    app:cornerRadius="20dp"
+                    app:strokeColor="@color/purple_500"
+                    app:strokeWidth="2dp"
+                    android:onClick="submitUpiID"
+                    android:paddingVertical="12dp"
+                    android:text="SUBMIT"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar"
+        android:layout_centerInParent="true"
+        android:indeterminateTint="@color/orange_color"
+        android:visibility="gone"/>
+
+</RelativeLayout>

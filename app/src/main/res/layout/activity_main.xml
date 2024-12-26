@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/drawerLayout"
+    android:fitsSystemWindows="true"
+    android:background="@color/white"
+    tools:context=".MainActivity.MainActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/appbarLayout">
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:navigationIcon="@drawable/ic_baseline_menu_24"
+                app:title="@string/app_name"
+                app:contentInsetLeft="0dp"
+                app:contentInsetStart="0dp"
+                app:contentInsetStartWithNavigation="0dp"
+                android:contentInsetStart="0dp"
+                app:titleTextColor="@color/white"
+                android:background="#071BA4"
+                app:navigationIconTint="@color/white"
+                app:popupTheme="@style/MyDarkToolbarStyle">
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="40dp"
+                    android:layout_height="?actionBarSize"
+                    android:src="@drawable/vip"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="5dp"
+                    android:visibility="gone"
+                    android:id="@+id/vipBadge"/>
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/walletAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="00"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="@color/white"
+                    android:drawableStart="@drawable/ic_baseline_account_balance_wallet_24"
+                    android:layout_gravity="end"
+                    android:drawablePadding="5dp"
+                    android:visibility="visible"
+                    android:layout_marginEnd="10dp"/>
+                <FrameLayout
+                    android:id="@+id/siv_notice"
+                    android:onClick="callNotice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:foreground="?selectableItemBackgroundBorderless"
+                    android:layout_marginEnd="10dp"
+                    android:layout_gravity="end">
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/baseline_notifications_24"
+                        android:layout_gravity="center"/>
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/mtv_pending_noti"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:text="99"
+                        android:visibility="gone"
+                        android:textSize="8sp"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:layout_gravity="top|end"
+                        android:background="@drawable/baseline_circle_24"
+                        android:gravity="center"/>
+                </FrameLayout>
+
+            </com.google.android.material.appbar.MaterialToolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/dataConText"
+            android:text="@string/you_are_not_connected_to_internet"
+            android:textColor="@color/white"
+            android:background="@color/warningRed"
+            android:padding="5dp"
+            android:visibility="gone"
+            android:layout_below="@id/appbarLayout"
+            android:elevation="1dp"/>
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/dataConText">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <FrameLayout
+                    android:id="@+id/stripLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:elevation="1dp"
+                    android:visibility="visible"
+                    android:background="@color/white">
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/textStripFirst"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textColor="@color/warningRed"
+                        android:textSize="18sp"
+                        android:ellipsize="marquee"
+                        android:marqueeRepeatLimit="marquee_forever"
+                        android:scrollHorizontally="true"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:singleLine="true"
+                        android:textStyle="bold"
+                        android:gravity="center"/>
+                </FrameLayout>
+
+<!--                <com.smarteist.autoimageslider.SliderView-->
+<!--                    android:id="@+id/slider"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="150dp"-->
+<!--                    android:layout_centerInParent="true"-->
+<!--                    app:sliderAnimationDuration="600"-->
+<!--                    app:sliderAutoCycleDirection="back_and_forth"-->
+<!--                    app:sliderIndicatorAnimationDuration="600"-->
+<!--                    app:sliderIndicatorEnabled="true"-->
+<!--                    app:sliderIndicatorGravity="center_horizontal|bottom"-->
+<!--                    app:sliderIndicatorMargin="15dp"-->
+<!--                    app:sliderIndicatorOrientation="horizontal"-->
+<!--                    app:sliderIndicatorPadding="3dp"-->
+<!--                    app:sliderIndicatorRadius="2dp"-->
+<!--                    app:sliderIndicatorSelectedColor="#5A5A5A"-->
+<!--                    app:sliderIndicatorUnselectedColor="#FFF"-->
+<!--                    app:sliderScrollTimeInSec="1" />-->
+                <LinearLayout
+                    android:id="@+id/numberLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:elevation="1dp">
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="2dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#071BA4"
+                        android:background="@drawable/rounded_corner_white"
+                        android:orientation="horizontal"
+                        android:onClick="callNumber">
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:layout_margin="2dp"
+                            android:tint="@android:color/white"
+                            android:src="@drawable/baseline_call_24"/>
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/callNumber"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1232654564"
+                            android:ellipsize="end"
+                            android:singleLine="true"
+                            android:textStyle="bold"
+                            android:textColor="@color/white"
+                            android:layout_gravity="center_vertical"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginEnd="2dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#071BA4"
+                        android:background="@drawable/rounded_corner_white"
+                        android:orientation="horizontal"
+                        android:onClick="whatsAppNumber">
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:padding="2dp"
+                            android:scaleType="fitXY"
+                            android:layout_margin="2dp"
+                            android:src="@drawable/ic_whatsappicon"/>
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/whatsAppNumber"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1232654564"
+                            android:textStyle="bold"
+                            android:ellipsize="end"
+                            android:singleLine="true"
+                            android:textColor="@color/white"
+                            android:layout_gravity="center_vertical"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/telegram"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginEnd="50dp"
+                    android:background="@drawable/rounded_corner_white">
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/telegram"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Withdrawal Proof"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textSize="15sp"
+                        android:layout_gravity="center_vertical"/>
+
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="5dp"
+                    android:padding="9dp"
+                    android:background="@drawable/border2">
+                <LinearLayout
+                    android:id="@+id/starLineLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:elevation="1dp">
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/playStarLineLty"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginTop="10dp"
+                        app:cardElevation="0dp"
+                        android:layout_weight="1"
+                        android:onClick="playStarLine"
+                        app:cardBackgroundColor="#071BA4"
+                        app:cardCornerRadius="40dp">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/starLineGame"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Play Starline"
+                            android:textStyle="bold"
+                            android:layout_marginVertical="10dp"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:layout_gravity="center"
+                            android:textSize="16sp" />
+
+                    </com.google.android.material.card.MaterialCardView>
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/galidesawar_card"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="10dp"
+                        app:cardElevation="0dp"
+                        android:layout_weight="1"
+                        android:onClick="galidesawar"
+                        app:cardBackgroundColor="#071BA4"
+                        app:cardCornerRadius="40dp">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/galidesawar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Gali Disawar"
+                            android:textStyle="bold"
+                            android:layout_marginVertical="10dp"
+                            android:textColor="@color/white"
+                            android:layout_gravity="center"
+                            android:textSize="16sp" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/fundLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:elevation="1dp">
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/addFund_mcv"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginTop="10dp"
+                        app:cardElevation="0dp"
+                        android:layout_weight="1"
+                        android:onClick="addFund"
+                        app:cardBackgroundColor="#071BA4"
+                        app:cardCornerRadius="40dp">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/addFunds"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Add Funds"
+                            android:textStyle="bold"
+                            android:layout_marginVertical="10dp"
+                            android:textColor="@color/white"
+                            android:layout_gravity="center"
+                            android:textSize="16sp" />
+
+                    </com.google.android.material.card.MaterialCardView>
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/withdraw_card"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="10dp"
+                        app:cardElevation="0dp"
+                        android:layout_weight="1"
+                        android:onClick="withdraw"
+                        app:cardBackgroundColor="#071BA4"
+                        app:cardCornerRadius="40dp">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/withdraw"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Withdraw"
+                            android:textStyle="bold"
+                            android:layout_marginVertical="10dp"
+                            android:textColor="@color/white"
+                            android:layout_gravity="center"
+                            android:textSize="16sp" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+                </LinearLayout>
+
+                <androidx.core.widget.NestedScrollView
+                    android:layout_below="@id/stripLayout"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:id="@+id/ll_whole"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:elevation="1dp">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recyclerView"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            tools:listitem="@layout/recycler_view_layout" />
+
+                        <ImageView
+                            android:id="@+id/nogame_iv"
+                            android:visibility="gone"
+                            android:src="@drawable/ic_win_history_icon_2_01"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
+                </androidx.core.widget.NestedScrollView>
+
+
+            </LinearLayout>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/progressBar"
+            android:indeterminateTint="@color/orange_color"
+            android:layout_centerInParent="true"
+            android:visibility="gone"/>
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/naviagationMenu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@drawable/background_bg"
+        android:orientation="vertical"
+        android:fitsSystemWindows="true">
+
+        <include layout="@layout/drawer_header"
+            android:id="@+id/drawerHeader"/>
+         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/navigation_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/drawer_menu_item"/>
+    </LinearLayout>
+</androidx.drawerlayout.widget.DrawerLayout>

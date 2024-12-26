@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context=".StarlineGameActivity.StarLineGameActivity">
+
+
+    <include
+        android:id="@+id/appbarLayout"
+        layout="@layout/custom_appbar11" />
+
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/dataConText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/warningRed"
+        android:elevation="1dp"
+        android:padding="5dp"
+        android:text="@string/you_are_not_connected_to_internet"
+        android:textColor="@color/white"
+        android:visibility="gone" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingVertical="10dp">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/singleDigit"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="25dp"
+                    android:background="#0B1C76"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    android:onClick="singleDigit"
+                    android:src="@drawable/sd" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/singlePana"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="25dp"
+                    android:layout_marginTop="20dp"
+                    android:background="#0B1C76"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    android:onClick="singlePana"
+                    android:src="@drawable/sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingVertical="10dp">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/doublePana"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="25dp"
+                    android:background="#0B1C76"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    android:onClick="doublePana"
+                    android:src="@drawable/dp" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/triplePana"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="25dp"
+                    android:layout_marginTop="20dp"
+                    android:background="#0B1C76"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    android:onClick="triplePana"
+                    android:src="@drawable/tp" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

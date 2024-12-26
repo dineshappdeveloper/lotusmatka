@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/conformLayout"
+    android:layout_marginHorizontal="2dp"
+    android:layout_marginVertical="2dp"
+    app:cardBackgroundColor="@color/orange_color"
+    xmlns:tools="http://schemas.android.com/tools">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/digitsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Digit 1"
+                android:layout_weight="1"
+                android:gravity="start"
+                android:paddingStart="10dp"
+                android:textColor="@color/black"
+                android:paddingVertical="13dp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/pointText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Amount: 10"
+                android:textStyle="bold"
+                android:gravity="start"
+                android:layout_weight="1"
+                android:textColor="#368E3A"
+                android:paddingVertical="10dp"/>
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/crossBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:src="@drawable/ic_red_cross_box"/>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>

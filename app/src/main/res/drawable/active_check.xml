@@ -1,0 +1,17 @@
+<!-- res/drawable/hollow_circle_checked.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Outer Hollow Circle -->
+    <item>
+        <shape android:shape="oval">
+            <stroke android:width="2dp" android:color="#4CAF50" /> <!-- Circle outline -->
+            <size android:width="24dp" android:height="24dp" />
+        </shape>
+    </item>
+
+    <!-- Inner Filled Circle (Checked State) -->
+    <item android:width="12dp" android:height="12dp" android:gravity="center">
+        <shape android:shape="oval">
+            <solid android:color="#4CAF50" /> <!-- Inner circle color -->
+        </shape>
+    </item>
+</layer-list>

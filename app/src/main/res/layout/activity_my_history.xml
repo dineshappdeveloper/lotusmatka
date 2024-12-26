@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".MyHistoryActivity.MyHistoryActivity">
+
+    <include layout="@layout/custom_appbar2"
+         android:id="@+id/appbarLayout"/>
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/dataConText"
+        android:text="@string/you_are_not_connected_to_internet"
+        android:textColor="@color/white"
+        android:background="@color/warningRed"
+        android:padding="5dp"
+        android:visibility="gone"
+        android:elevation="1dp"/>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+<!--            <com.google.android.material.imageview.ShapeableImageView-->
+<!--                android:layout_width="150dp"-->
+<!--                android:layout_height="150dp"-->
+<!--                android:layout_marginVertical="20dp"-->
+<!--                android:src="@drawable/ic_app_logo_trans"-->
+<!--                android:layout_gravity="center"/>-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:elevation="1dp">
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginTop="10dp"
+                    app:cardElevation="0dp"
+                    android:layout_weight="1"
+                    android:tag="mainBid"
+                    android:foreground="?selectableItemBackground"
+                    android:onClick="fundItemClick"
+                    app:cardBackgroundColor="#071BA4"
+                    app:cardCornerRadius="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="10dp">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/dice"
+                        android:layout_gravity="center"
+                        android:contentDescription="Main Bid Icon" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Main Bid "
+                        android:textStyle="bold"
+                        android:layout_marginVertical="10dp"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:layout_gravity="center"
+                        android:textSize="16sp" />
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp"
+                    app:cardElevation="0dp"
+                    android:layout_weight="1"
+                    android:foreground="?selectableItemBackground"
+                    android:tag="mainWin"
+                    android:onClick="fundItemClick"
+                    app:cardBackgroundColor="#071BA4"
+                    app:cardCornerRadius="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="10dp">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/trophy"
+                        android:layout_gravity="center"
+                        android:contentDescription="Main Bid Icon" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Main Win "
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:layout_marginVertical="10dp"
+                        android:textColor="@color/white"
+                        android:layout_gravity="center"
+                        android:textSize="16sp" />
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/starlineHistory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginVertical="10dp"
+                android:elevation="1dp">
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginTop="10dp"
+                    app:cardElevation="0dp"
+                    android:layout_weight="1"
+                    android:tag="starBid"
+                    android:onClick="fundItemClick"
+                    android:background="?selectableItemBackground"
+                    app:cardBackgroundColor="#071BA4"
+                    app:cardCornerRadius="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="10dp">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/dice"
+                        android:layout_gravity="center"
+                        android:contentDescription="Main Bid Icon" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Starline Bid "
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:layout_marginVertical="10dp"
+                        android:textColor="@color/white"
+                        android:layout_gravity="center"
+                        android:textSize="16sp" />
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp"
+                    app:cardElevation="0dp"
+                    android:layout_weight="1"
+                    android:tag="starWin"
+                    android:onClick="fundItemClick"
+                    android:background="?selectableItemBackground"
+                    app:cardBackgroundColor="#071BA4"
+                    app:cardCornerRadius="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="10dp">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/trophy"
+                        android:layout_gravity="center"
+                        android:contentDescription="Main Bid Icon" />
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Starline Win "
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:layout_marginVertical="10dp"
+                        android:textColor="@color/white"
+                        android:layout_gravity="center"
+                        android:textSize="16sp" />
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/galiHistory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:elevation="1dp">
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginTop="10dp"
+                    app:cardElevation="0dp"
+                    android:layout_weight="1"
+                    android:tag="galiBid"
+                    android:foreground="?selectableItemBackground"
+                    android:onClick="fundItemClick"
+                    app:cardBackgroundColor="#071BA4"
+                    app:cardCornerRadius="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="10dp">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/dice"
+                        android:layout_gravity="center"
+                        android:contentDescription="Main Bid Icon" />
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Gali Bid "
+                        android:textStyle="bold"
+                        android:layout_marginVertical="10dp"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:layout_gravity="center"
+                        android:textSize="16sp" />
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp"
+                    app:cardElevation="0dp"
+                    android:layout_weight="1"
+                    android:foreground="?selectableItemBackground"
+                    android:tag="galiWin"
+                    android:onClick="fundItemClick"
+                    app:cardBackgroundColor="#071BA4"
+                    app:cardCornerRadius="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="10dp">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/trophy"
+                        android:layout_gravity="center"
+                        android:contentDescription="Main Bid Icon" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Gali Win "
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:layout_marginVertical="10dp"
+                        android:textColor="@color/white"
+                        android:layout_gravity="center"
+                        android:textSize="16sp" />
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

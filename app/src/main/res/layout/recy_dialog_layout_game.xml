@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/conformLayout"
+    android:layout_marginHorizontal="10dp"
+    android:layout_marginVertical="2dp"
+    app:cardBackgroundColor="#4f4f51"
+    xmlns:tools="http://schemas.android.com/tools">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_centerInParent="true"
+            android:gravity="center">
+            <com.google.android.material.textview.MaterialTextView
+                android:textSize="12sp"
+                android:id="@+id/digitsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Digit 1"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:paddingVertical="8dp" />
+            <com.google.android.material.textview.MaterialTextView
+                android:textSize="12sp"
+                android:id="@+id/pannaText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Close Pana 100"
+                android:paddingStart="15dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:textColor="@color/white"
+                android:paddingVertical="8dp"
+                tools:ignore="RtlSymmetry" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:textSize="12sp"
+                android:id="@+id/pointText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10 Points"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:textColor="@color/green"
+                android:paddingVertical="8dp"/>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>

@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/mybg"
+    tools:context=".SecurityPinActivity.SecurityPinActivity">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/dataConText"
+        android:text="@string/you_are_not_connected_to_internet"
+        android:textColor="@color/white"
+        android:background="@color/warningRed"
+        android:padding="5dp"
+        android:visibility="gone"
+        android:elevation="1dp"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/ll_checkBoxLay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="30dp"
+            android:orientation="vertical">
+
+            <include layout="@layout/top_design4"
+                android:id="@+id/topDesign"/>
+
+            <LinearLayout
+                android:id="@+id/checkBoxLay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:baselineAligned="true"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/checkBox1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:animateLayoutChanges="true"
+                    android:buttonTint="@color/white"
+                    android:clickable="false"
+                    android:minWidth="0dp" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/checkBox2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:animateLayoutChanges="true"
+                    android:buttonTint="@color/white"
+                    android:clickable="false"
+                    android:minWidth="0dp" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/checkBox3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:buttonTint="@color/white"
+                    android:animateLayoutChanges="true"
+                    android:clickable="false"
+                    android:minWidth="0dp" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/checkBox4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:animateLayoutChanges="true"
+                    android:buttonTint="@color/white"
+                    android:clickable="false"
+                    android:minWidth="0dp" />
+            </LinearLayout>
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/resetPin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginEnd="60dp"
+                android:background="?attr/selectableItemBackground"
+                android:onClick="resetPin"
+                android:padding="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Reset Pin?"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+            <LinearLayout
+                android:id="@+id/keyboard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/btn1"
+                        android:layout_width="0dp"
+                        android:layout_height="70dp"
+                        android:layout_weight="1"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:gravity="center"
+                        android:onClick="button1"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:backgroundTint="@color/white"
+                            android:background="@drawable/baseline_circle_24"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="@string/_1"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/btn2"
+                        android:layout_width="0dp"
+                        android:layout_height="70dp"
+                        android:layout_weight="1"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:gravity="center"
+                        android:onClick="button2"
+                        android:orientation="vertical"
+                        tools:ignore="OnClick,UsingOnClickInXml">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:backgroundTint="@color/white"
+                            android:background="@drawable/baseline_circle_24"
+                            android:gravity="center"
+                            android:text="@string/_2"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/btn3"
+                        android:layout_width="0dp"
+                        android:layout_height="70dp"
+                        android:layout_weight="1"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:gravity="center"
+                        android:onClick="button3"
+                        android:orientation="vertical"
+                        tools:ignore="OnClick,UsingOnClickInXml">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:backgroundTint="@color/white"
+                            android:background="@drawable/baseline_circle_24"
+                            android:gravity="center"
+                            android:text="@string/_3"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="true"
+                    android:layout_marginVertical="10dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/btn4"
+                        android:layout_width="0dp"
+                        android:layout_height="70dp"
+                        android:layout_weight="1"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:gravity="center"
+                        android:onClick="button4"
+                        android:orientation="vertical"
+                        tools:ignore="OnClick,UsingOnClickInXml">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:backgroundTint="@color/white"
+                            android:background="@drawable/baseline_circle_24"
+                            android:gravity="center"
+                            android:text="@string/_4"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/btn5"
+                        android:layout_width="0dp"
+                        android:layout_height="70dp"
+                        android:layout_weight="1"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:gravity="center"
+                        android:onClick="button5"
+                        android:orientation="vertical"
+                        tools:ignore="OnClick,UsingOnClickInXml">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:backgroundTint="@color/white"
+                            android:background="@drawable/baseline_circle_24"
+                            android:gravity="center"
+                            android:text="@string/_5"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/btn6"
+                        android:layout_width="0dp"
+                        android:layout_height="70dp"
+                        android:layout_weight="1"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:gravity="center"
+                        android:onClick="button6"
+                        android:orientation="vertical"
+                        tools:ignore="OnClick,UsingOnClickInXml">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:backgroundTint="@color/white"
+                            android:background="@drawable/baseline_circle_24"
+                            android:gravity="center"
+                            android:text="@string/_6"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="true"
+                    android:layout_marginHorizontal="20dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/btn7"
+                        android:layout_width="0dp"
+                        android:layout_height="70dp"
+                        android:layout_weight="1"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:gravity="center"
+                        android:onClick="button7"
+                        android:orientation="vertical"
+                        tools:ignore="OnClick,UsingOnClickInXml">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:backgroundTint="@color/white"
+                            android:background="@drawable/baseline_circle_24"
+                            android:gravity="center"
+                            android:text="@string/_7"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/btn8"
+                        android:layout_width="0dp"
+                        android:layout_height="70dp"
+                        android:layout_weight="1"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:gravity="center"
+                        android:onClick="button8"
+                        android:orientation="vertical"
+                        tools:ignore="OnClick,UsingOnClickInXml">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:backgroundTint="@color/white"
+                            android:background="@drawable/baseline_circle_24"
+                            android:gravity="center"
+                            android:text="@string/_8"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/btn9"
+                        android:layout_width="0dp"
+                        android:layout_height="70dp"
+                        android:layout_weight="1"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:gravity="center"
+                        android:onClick="button9"
+                        tools:ignore="OnClick,UsingOnClickInXml">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:backgroundTint="@color/white"
+                            android:background="@drawable/baseline_circle_24"
+                            android:gravity="center"
+                            android:text="@string/_9"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/btnC"
+                        android:layout_width="0dp"
+                        android:layout_height="70dp"
+                        android:layout_weight="1"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:gravity="center"
+                        android:onClick="buttonClr"
+                        android:orientation="vertical"
+                        tools:ignore="OnClick,UsingOnClickInXml">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:backgroundTint="@color/white"
+                            android:background="@drawable/baseline_circle_24"
+                            android:gravity="center"
+                            android:text="C"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/btn0"
+                        android:layout_width="0dp"
+                        android:layout_height="70dp"
+                        android:layout_weight="1"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:gravity="center"
+                        android:onClick="button0"
+                        android:orientation="vertical"
+                        tools:ignore="OnClick,UsingOnClickInXml">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:backgroundTint="@color/white"
+                            android:background="@drawable/baseline_circle_24"
+                            android:gravity="center"
+                            android:text="@string/_0"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/btnDelete"
+                        android:layout_width="0dp"
+                        android:layout_height="70dp"
+                        android:layout_weight="1"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:gravity="center"
+                        android:onClick="buttonDelete"
+                        tools:ignore="OnClick,UsingOnClickInXml">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:backgroundTint="@color/white"
+                            android:background="@drawable/baseline_circle_24"
+                            android:gravity="center"
+                            android:text="X"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="50dp"
+                android:layout_marginTop="50dp"
+                android:foreground="?selectableItemBackground"
+                android:onClick="backToLogin">
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Back To Login"
+                    android:textAllCaps="false"
+                    android:textSize="18sp"
+                    android:textColor="@color/white"/>
+            </LinearLayout>
+
+            <include layout="@layout/admin_button"
+                android:id="@+id/adminButton"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="30dp"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+    <include layout="@layout/custom_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_centerInParent="true"/>
+</RelativeLayout>

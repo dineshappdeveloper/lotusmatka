@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/mybg"
+    tools:context=".GalidesawarGameActivity.GalidesawarGameActivity">
+
+
+    <include layout="@layout/custom_appbar7"
+        android:id="@+id/appbarLayout"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/dataConText"
+        android:text="@string/you_are_not_connected_to_internet"
+        android:textColor="@color/white"
+        android:background="@color/warningRed"
+        android:padding="5dp"
+        android:visibility="gone"
+        android:elevation="1dp"/>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+                android:paddingVertical="10dp">
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/leftDigit"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:onClick="leftDigit"
+                    android:layout_marginHorizontal="25dp"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ld"/>
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/rightDigit"
+                    android:layout_width="120dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_height="120dp"
+                    android:onClick="RightDigit"
+                    android:layout_marginHorizontal="25dp"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    android:layout_gravity="center"
+                    android:src="@drawable/rd"/>
+            </LinearLayout>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/jodiDigit"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:onClick="jodiDigit"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="25dp"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:layout_gravity="center"
+                android:src="@drawable/jd"/>
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>
