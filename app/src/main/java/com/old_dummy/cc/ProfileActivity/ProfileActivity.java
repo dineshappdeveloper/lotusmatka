@@ -24,6 +24,7 @@ import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.android.material.textview.MaterialTextView;
+import com.old_dummy.cc.BaseActivity;
 import com.old_dummy.cc.Extras.SharPrefHelper;
 import com.old_dummy.cc.Extras.Utility;
 import com.old_dummy.cc.Extras.YourService;
@@ -32,9 +33,7 @@ import com.old_dummy.cc.Models.LoginModel;
 import com.old_dummy.cc.R;
 import com.old_dummy.cc.SplashActivity.SplashActivity;
 
-public class ProfileActivity extends AppCompatActivity implements ProfileContract.View{
-
-
+public class ProfileActivity extends BaseActivity implements ProfileContract.View{
     TextInputEditText inputPersonName, inputMobileNumber, inputEmail;
     MaterialButton submitButton;
     InputMethodManager imm;
@@ -45,14 +44,19 @@ public class ProfileActivity extends AppCompatActivity implements ProfileContrac
     ProfileContract.Presenter presenter;
     TextInputLayout nameInputLayout;
     Boolean editProfile = false;
+    @Override
+    protected int getLayoutResourceId() {
+        return R.layout.activity_profile;
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setStatusBarColor(getResources().getColor(R.color.main_color));
-        setContentView(R.layout.activity_profile);
         intIDs();
     }
+
 
 
     private void intIDs() {
@@ -172,5 +176,10 @@ public class ProfileActivity extends AppCompatActivity implements ProfileContrac
         Intent intent = new Intent(this, SplashActivity.class);
         startActivity(intent);
         finish();
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+        super.onPointerCaptureChanged(hasCapture);
     }
 }

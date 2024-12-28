@@ -11,20 +11,23 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+<!--        app:navigationIcon="@drawable/ic_baseline_menu_24"-->
+
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
+            android:background="#071BA4"
             android:layout_height="wrap_content"
             android:id="@+id/appbarLayout">
             <com.google.android.material.appbar.MaterialToolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:navigationIcon="@drawable/ic_baseline_menu_24"
                 app:title="@string/app_name"
                 app:contentInsetLeft="0dp"
                 app:contentInsetStart="0dp"
                 app:contentInsetStartWithNavigation="0dp"
                 android:contentInsetStart="0dp"
+                android:layout_marginLeft="8dp"
                 app:titleTextColor="@color/white"
                 android:background="#071BA4"
                 app:navigationIconTint="@color/white"

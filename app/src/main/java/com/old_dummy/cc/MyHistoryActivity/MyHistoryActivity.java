@@ -17,24 +17,29 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.textview.MaterialTextView;
+import com.old_dummy.cc.BaseActivity;
 import com.old_dummy.cc.Extras.SharPrefHelper;
 import com.old_dummy.cc.Extras.Utility;
 import com.old_dummy.cc.Extras.YourService;
 import com.old_dummy.cc.R;
 
-public class MyHistoryActivity extends AppCompatActivity implements MyHistoryContract.View {
+public class MyHistoryActivity extends BaseActivity implements MyHistoryContract.View {
 
     MaterialTextView dataConText;
     IntentFilter mIntentFilter;
     Utility utility;
     MyHistoryContract.Presenter presenter;
     LinearLayout galiHistory,starlineHistory;
+    @Override
+    protected int getLayoutResourceId() {
+        return R.layout.activity_my_history;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setStatusBarColor(getResources().getColor(R.color.main_color));
-        setContentView(R.layout.activity_my_history);
+//        setContentView(R.layout.activity_my_history);
         intIDs();
         MaterialToolbar toolbar = findViewById(R.id.appbarLayout).findViewById(R.id.toolbar);
         toolbar.setTitle("My History");
@@ -45,6 +50,8 @@ public class MyHistoryActivity extends AppCompatActivity implements MyHistoryCon
             }
         });
     }
+
+
     private void intIDs() {
         dataConText = findViewById(R.id.dataConText);
         starlineHistory = findViewById(R.id.starlineHistory);
@@ -114,5 +121,10 @@ public class MyHistoryActivity extends AppCompatActivity implements MyHistoryCon
                 presenter.history(this,500,"Galidesawar Win History");
                 break;
         }
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+        super.onPointerCaptureChanged(hasCapture);
     }
 }

@@ -46,6 +46,7 @@ import com.google.gson.reflect.TypeToken;
 import com.old_dummy.cc.Adapters.GameListAdapter;
 import com.old_dummy.cc.Adapters.MenuAdapter;
 //import com.old_dummy.cc.Adapters.ViewPagerAdapter;
+import com.old_dummy.cc.BaseActivity;
 import com.old_dummy.cc.Extras.SharPrefHelper;
 import com.old_dummy.cc.Extras.Utility;
 import com.old_dummy.cc.Extras.YourService;
@@ -73,12 +74,9 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class MainActivity extends AppCompatActivity implements MainContract.View, MenuAdapter.OnMenuItemClickListener {
+public class MainActivity extends BaseActivity implements MainContract.View {
 
     MaterialToolbar toolbar;
-    DrawerLayout drawerLayout;
-//    SliderView viewPager;
-//    ViewPagerAdapter viewPagerAdapter;
     ImageView noGameIv;
     List<AppDetailsModel.Data.Banner> bannerList;
     FrameLayout stripLayout;
@@ -104,12 +102,15 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     ConstraintLayout navigationHeader;
     List<MenuItemModel> menuItems;
 
+    @Override
+    protected int getLayoutResourceId() {
+        return R.layout.activity_main;
+    }
     @SuppressLint("SimpleDateFormat")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setStatusBarColor(getResources().getColor(R.color.main_color));
-        setContentView(R.layout.activity_main);
         intIDs();
         configureToolbar();
 
@@ -150,6 +151,9 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         else Toast.makeText(this, "Check Your Internet Connection", Toast.LENGTH_SHORT).show();
     }
 
+
+
+
     private void updateProjectStatus() {
 //        if(!SharPrefHelper.getBooleanData(this,SharPrefHelper.KEY_BANNER_STATUS,false)) viewPager.setVisibility(View.GONE);
         if(!SharPrefHelper.getBooleanData(this,SharPrefHelper.KEY_MARQUEE_STATUS,false)) stripLayout.setVisibility(View.GONE);
@@ -169,7 +173,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         }
     }
     private void intIDs() {
-        drawerLayout = findViewById(R.id.drawerLayout);
+//        drawerLayout = findViewById(R.id.drawerLayout);
         toolbar = findViewById(R.id.toolbar);
         navigationRecyclerView = findViewById(R.id.navigation_recycler_view);
 //        viewPager = findViewById(R.id.slider);
@@ -240,16 +244,16 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
             galidesawarCard.setVisibility(View.GONE);
             fundLayout.setVisibility(View.GONE);
             sivNotice.setVisibility(View.GONE);
-            menuItems.clear();
-            menuItems.add(new MenuItemModel("Home", R.drawable.outline_home_24));
-            menuItems.add(new MenuItemModel("Profile", R.drawable.baseline_perm_identity_24));
-            menuItems.add(new MenuItemModel("Contact Us", R.drawable.outline_contact_phone_24));
-            menuItems.add(new MenuItemModel("Share With Friends", R.drawable.baseline_share_24));
-            menuItems.add(new MenuItemModel("Privacy Policy", R.drawable.outline_gpp_maybe_24));
-            menuItems.add(new MenuItemModel("Rate App", R.drawable.outline_star_border_24));
-            menuItems.add(new MenuItemModel("Change Password", R.drawable.baseline_password_24));
-            menuItems.add(new MenuItemModel("Logout", R.drawable.baseline_logout_24));
-            setNavigationMenu(menuItems);
+//            menuItems.clear();
+//            menuItems.add(new MenuItemModel("Home", R.drawable.outline_home_24));
+//            menuItems.add(new MenuItemModel("Profile", R.drawable.baseline_perm_identity_24));
+//            menuItems.add(new MenuItemModel("Contact Us", R.drawable.outline_contact_phone_24));
+//            menuItems.add(new MenuItemModel("Share With Friends", R.drawable.baseline_share_24));
+//            menuItems.add(new MenuItemModel("Privacy Policy", R.drawable.outline_gpp_maybe_24));
+//            menuItems.add(new MenuItemModel("Rate App", R.drawable.outline_star_border_24));
+//            menuItems.add(new MenuItemModel("Change Password", R.drawable.baseline_password_24));
+//            menuItems.add(new MenuItemModel("Logout", R.drawable.baseline_logout_24));
+//            setNavigationMenu(menuItems);
 
         }else{
             walletAmount.setVisibility(View.VISIBLE);
@@ -274,15 +278,15 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
             menuItems.add(new MenuItemModel("Rate App", R.drawable.outline_star_border_24));
             menuItems.add(new MenuItemModel("Change Password", R.drawable.baseline_password_24));
             menuItems.add(new MenuItemModel("Logout", R.drawable.baseline_logout_24));
-            setNavigationMenu(menuItems);
+//            setNavigationMenu(menuItems);
         }
     }
 
-    void setNavigationMenu(List<MenuItemModel> menuItemList){
-        navigationRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        MenuAdapter menuAdapter = new MenuAdapter(menuItemList, this);
-        navigationRecyclerView.setAdapter(menuAdapter);
-    }
+//    void setNavigationMenu(List<MenuItemModel> menuItemList){
+//        navigationRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+//        MenuAdapter menuAdapter = new MenuAdapter(menuItemList, this);
+//        navigationRecyclerView.setAdapter(menuAdapter);
+//    }
 
     void welcomePopUp(){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -317,48 +321,48 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         registerReceiver(myReceiver, mIntentFilter, Context.RECEIVER_NOT_EXPORTED);
     }
 
-    @Override
-    public void onMenuItemClick(String menuItem) {
-        // Handle the menu item clicks here
-        // For example, you can replace fragments, start new activities, etc.
-        switch (menuItem) {
-            case "Profile":
-                presenter.profile(MainActivity.this);
-                break;
-            case "Wallet":
-                presenter.funds(MainActivity.this);
-                break;
-            case "My History":
-                presenter.history(MainActivity.this,200);
-                break;
-            case "Game Rates":
-                presenter.gameRates(MainActivity.this,1);
-                break;
-            case "How To Play":
-                presenter.gameRates(MainActivity.this,2);
-                break;
-            case "Contact Us":
-                presenter.contactUs(MainActivity.this);
-                break;
-            case "Share With Friends":
-                presenter.shareWithFriends(MainActivity.this);
-                break;
-            case "Privacy Policy":
-                presenter.privacyPolicy(this);
-                break;
-            case "Rate App":
-                presenter.rateApp(MainActivity.this);
-                break;
-            case "Change Password":
-                presenter.changePassword(MainActivity.this);
-                break;
-            case "Logout":
-                presenter.logout(MainActivity.this);
-                break;        }
-        drawerLayout.closeDrawers();
-    }
+//    @Override
+//    public void onMenuItemClick(String menuItem) {
+//        // Handle the menu item clicks here
+//        // For example, you can replace fragments, start new activities, etc.
+//        switch (menuItem) {
+//            case "Profile":
+//                presenter.profile(MainActivity.this);
+//                break;
+//            case "Wallet":
+//                presenter.funds(MainActivity.this);
+//                break;
+//            case "My History":
+//                presenter.history(MainActivity.this,200);
+//                break;
+//            case "Game Rates":
+//                presenter.gameRates(MainActivity.this,1);
+//                break;
+//            case "How To Play":
+//                presenter.gameRates(MainActivity.this,2);
+//                break;
+//            case "Contact Us":
+//                presenter.contactUs(MainActivity.this);
+//                break;
+//            case "Share With Friends":
+//                presenter.shareWithFriends(MainActivity.this);
+//                break;
+//            case "Privacy Policy":
+//                presenter.privacyPolicy(this);
+//                break;
+//            case "Rate App":
+//                presenter.rateApp(MainActivity.this);
+//                break;
+//            case "Change Password":
+//                presenter.changePassword(MainActivity.this);
+//                break;
+//            case "Logout":
+//                presenter.logout(MainActivity.this);
+//                break;        }
+//        drawerLayout.closeDrawers();
+//    }
     private void configureToolbar() {
-        toolbar.setNavigationOnClickListener(v -> drawerLayout.openDrawer(GravityCompat.START));
+//        toolbar.setNavigationOnClickListener(v -> drawerLayout.openDrawer(GravityCompat.START));
         walletAmount.setOnClickListener(v -> presenter.funds(this));
     }
 
@@ -409,11 +413,12 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
 
     @Override
     public void onBackPressed() {
-        if (drawerLayout.isDrawerOpen(naviagationMenu)){
-            drawerLayout.closeDrawers();
-        }else {
-            finishAffinity();
-        }
+        finishAffinity();
+//        if (drawerLayout.isDrawerOpen(naviagationMenu)){
+//            drawerLayout.closeDrawers();
+//        }else {
+//            finishAffinity();
+//        }
     }
 
     public void addFund(View view) {
@@ -485,10 +490,11 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
             vipBadge.setVisibility(View.GONE);
         }
         if(userStatusData.getAccountStatus().equals("1")){
-            if(from.equals("pin")){
-                from = "";
-                welcomePopUp();
-            }
+            welcomePopUp();
+//            if(from.equals("pin")){
+//                from = "";
+//                welcomePopUp();
+//            }
 
         }
     }
@@ -588,5 +594,10 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
             Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(telegramLink));
             startActivity(browserIntent);
         }
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+        super.onPointerCaptureChanged(hasCapture);
     }
 }

@@ -32,6 +32,10 @@
             android:windowSoftInputMode="stateVisible|adjustResize"
             android:exported="false" />
         <activity
+            android:name="com.old_dummy.cc.SettingsActivity"
+            android:windowSoftInputMode="stateVisible|adjustResize"
+            android:exported="false" />
+        <activity
             android:name="com.old_dummy.cc.StarlineGameActivity.StarLineGameActivity"
             android:screenOrientation="portrait" />
         <activity
