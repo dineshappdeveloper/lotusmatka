@@ -47,7 +47,7 @@
                 android:layout_height="wrap_content"
                 android:text="Home"
                 android:textSize="12sp"
-                android:textColor="#403F3F" />
+                app:tint="#626262" />
         </LinearLayout>
 
         <!-- History Navigation Item -->
@@ -74,7 +74,7 @@
                 android:layout_height="wrap_content"
                 android:text="History"
                 android:textSize="12sp"
-                android:textColor="#000000" />
+                app:tint="#403F3F" />
         </LinearLayout>
 
         <!-- Profile Navigation Item -->
@@ -100,7 +100,7 @@
                 android:layout_height="wrap_content"
                 android:text="Profile"
                 android:textSize="12sp"
-                android:textColor="#000000" />
+                app:tint="#626262" />
         </LinearLayout>
 
         <!-- Settings Navigation Item -->
@@ -126,7 +126,7 @@
                 android:layout_height="wrap_content"
                 android:text="Settings"
                 android:textSize="12sp"
-                android:textColor="#000000" />
+                app:tint="#626262" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

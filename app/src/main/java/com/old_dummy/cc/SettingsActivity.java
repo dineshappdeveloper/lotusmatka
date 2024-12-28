@@ -20,7 +20,8 @@ import com.old_dummy.cc.Models.MenuItemModel;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SettingsActivity extends BaseActivity implements MenuAdapter.OnMenuItemClickListener {
+public class SettingsActivity extends BaseActivity implements
+        MenuAdapter.OnMenuItemClickListener {
     TextInputEditText inputPersonName, inputMobileNumber, inputEmail;
     ProgressBar progressBar;
     MaterialTextView dataConText;
@@ -31,6 +32,7 @@ public class SettingsActivity extends BaseActivity implements MenuAdapter.OnMenu
     MainContract.Presenter presenter;
     @Override
     protected int getLayoutResourceId() {
+
         return R.layout.fragment_setting;
     }
 
@@ -38,7 +40,9 @@ public class SettingsActivity extends BaseActivity implements MenuAdapter.OnMenu
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setStatusBarColor(getResources().getColor(R.color.main_color));
+        getWindow().setStatusBarColor(
+                getResources().getColor(
+                        R.color.main_color));
         intIDs();
     }
 
