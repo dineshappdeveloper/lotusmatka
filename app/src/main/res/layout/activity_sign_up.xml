@@ -181,7 +181,7 @@
                 android:onClick="createNewAccount"
                 android:text="Signup"
                 app:cornerRadius="20dp"
-                app:strokeColor="@color/white"
+                app:strokeColor="#ffFFE3BB"
                 app:strokeWidth="2dp"
                 android:layout_gravity="center_horizontal"
                 android:fontFamily="@font/poppins_extra_bold"
@@ -222,7 +222,7 @@
                 android:layout_height="wrap_content"
                 android:text="Or"
                 android:textSize="16sp"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textStyle="bold"
                 android:gravity="center"/>
 
@@ -232,24 +232,24 @@
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="5dp"
                 android:backgroundTint="@color/transparent"
-                android:text="Login"
-                app:cornerRadius="20dp"
-                app:strokeColor="@color/white"
-                app:strokeWidth="2dp"
-                android:onClick="LoginNow"
                 android:fontFamily="@font/poppins_extra_bold"
-                android:textAllCaps="true"
-                android:textStyle="bold"
+                android:onClick="LoginNow"
                 android:paddingHorizontal="50dp"
+                android:text="Login"
+                android:textAllCaps="true"
                 android:textColor="@color/white"
-                android:textSize="16sp"/>
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:cornerRadius="20dp"
+                app:strokeColor="#ffFFE3BB"
+                app:strokeWidth="2dp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Need Help?"
                 android:textStyle="bold"
-                android:textColor="@color/white"
+                android:textColor="#ff000000"
                 android:textSize="16sp"
                 android:layout_marginTop="10dp"
                 android:gravity="center"/>
